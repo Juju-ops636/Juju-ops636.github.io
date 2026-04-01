@@ -52,7 +52,7 @@
 
 <body>
 
-<h1>🎮 Jaxson's Game Hub</h1>
+<h1> Big ballsack jacob</h1>
 
 <div class="container">
   <button onclick="openGame()">Open Game App</button>
