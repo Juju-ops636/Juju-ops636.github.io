@@ -2,7 +2,7 @@
 !DOCTYPE html>
 <html>
 <head>
-  <title>Jaxson's Game Hub</title>
+  <title>Big ballsack jacob</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
