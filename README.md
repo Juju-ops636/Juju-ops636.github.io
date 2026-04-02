@@ -64,3 +64,6 @@
 function openGame() {
   document.getElementById("gameFrame").style.display = "block";
   document.getElementById("gameFrame").src = "https://skip.nightly.pw/";
+  <a href="https://skip.nightly.pw" target="_blank">
+  <button>Play Games (Skip)</button>
+</a>
