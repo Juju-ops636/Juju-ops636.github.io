@@ -1,84 +1,128 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Game Hub</title>
+  <title>Game Hub</title>
   <style>
     body {
       margin: 0;
       font-family: Arial;
-      background: #111;
+      background: #0f0f0f;
       color: white;
-      text-align: center;
     }
 
     header {
-      background: red;
-      padding: 20px;
-      font-size: 28px;
-      font-weight: bold;
+      background: #1a1a1a;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: red;
+    }
+
+    #search {
+      padding: 8px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
     }
 
     .games {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 20px;
       padding: 20px;
     }
 
     .card {
-      background: #222;
-      padding: 20px;
+      background: #1c1c1c;
       border-radius: 15px;
+      padding: 15px;
+      text-align: center;
       transition: 0.2s;
     }
 
     .card:hover {
       transform: scale(1.05);
-      background: #333;
+      background: #2a2a2a;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
     }
 
     button {
       margin-top: 10px;
-      padding: 10px 20px;
+      padding: 8px 15px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       background: red;
       color: white;
       cursor: pointer;
     }
 
-    iframe {
+    #player {
       width: 100%;
       height: 500px;
       border: none;
-      margin-top: 20px;
+      display: none;
     }
   </style>
 </head>
 
 <body>
 
-<header>🎮 My Game Hub</header>
+<header>
+  <h1>🎮 Game Hub</h1>
+  <input type="text" id="search" placeholder="Search games..." onkeyup="searchGames()">
+</header>
 
-<div class="games">
+<iframe id="player"></iframe>
 
-  <!-- Skip Game -->
-  <div class="card">
-    <h2>Skip Games</h2>
-    <p>Play unblocked games</p>
-    <button onclick="openSkip()">Play</button>
+<div class="games" id="gameList">
+
+  <!-- Game 1 -->
+  <div class="card" data-name="skip games">
+    <img src="https://via.placeholder.com/200x120">
+    <h3>Skip Games</h3>
+    <button onclick="openGame('https://skip.nightly.pw')">Play</button>
   </div>
 
-  <!-- Example Other Game -->
-  <div class="card">
-    <h2>Mini Game</h2>
-    <p>Coming soon</p>
-    <button onclick="alert('Add your own games here!')">Play</button>
+  <!-- Game 2 -->
+  <div class="card" data-name="slope">
+    <img src="https://via.placeholder.com/200x120">
+    <h3>Slope</h3>
+    <button onclick="openGame('https://ubg100.github.io/slope/')">Play</button>
+  </div>
+
+  <!-- Game 3 -->
+  <div class="card" data-name="run 3">
+    <img src="https://via.placeholder.com/200x120">
+    <h3>Run 3</h3>
+    <button onclick="openGame('https://ubg100.github.io/run-3/')">Play</button>
   </div>
 
 </div>
 
 <script>
-function openSkip() {
-  // Opens skip in a new tab (most reliable)
-  window.open("https://skip.nightly.pw", "_blank");
+function openGame(url) {
+  let player = document.getElementById("player");
+  player.style.display = "block";
+  player.src = url;
+  window.scrollTo(0, 0);
+}
+
+function searchGames() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let games = document.querySelectorAll(".card");
+
+  games.forEach(game => {
+    let name = game.getAttribute("data-name");
+    if (name.includes(input)) {
+      game.style.display = "block";
+    } else {
+      game.style.display = "none";
