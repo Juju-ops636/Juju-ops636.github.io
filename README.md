@@ -1,67 +1,84 @@
-# Juju-ops636.github.io
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Jfox gamehub</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Game Hub</title>
   <style>
     body {
       margin: 0;
       font-family: Arial;
-      background: linear-gradient(135deg, #000, #111);
+      background: #111;
       color: white;
       text-align: center;
     }
 
-    h1 {
-      margin-top: 20px;
-      font-size: 32px;
-    }
-
-    .container {
-      margin-top: 30px;
-    }
-
-    button {
-      display: block;
-      width: 250px;
-      margin: 15px auto;
-      padding: 15px;
-      font-size: 18px;
-      border: none;
-      border-radius: 12px;
+    header {
       background: red;
-      color: white;
-      cursor: pointer;
+      padding: 20px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #222;
+      padding: 20px;
+      border-radius: 15px;
       transition: 0.2s;
     }
 
-    button:hover {
-      background: darkred;
+    .card:hover {
       transform: scale(1.05);
+      background: #333;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: red;
+      color: white;
+      cursor: pointer;
     }
 
     iframe {
       width: 100%;
-      height: 80vh;
+      height: 500px;
       border: none;
-      display: none;
+      margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
 
-<h1> Jfox gamehub</h1>
+<header>🎮 My Game Hub</header>
 
-<div class="container">
-  <button onclick="openGame()">Open Game App</button>
+<div class="games">
+
+  <!-- Skip Game -->
+  <div class="card">
+    <h2>Skip Games</h2>
+    <p>Play unblocked games</p>
+    <button onclick="openSkip()">Play</button>
+  </div>
+
+  <!-- Example Other Game -->
+  <div class="card">
+    <h2>Mini Game</h2>
+    <p>Coming soon</p>
+    <button onclick="alert('Add your own games here!')">Play</button>
+  </div>
+
 </div>
 
-<iframe id="gameFrame"></iframe>
-
 <script>
-function openGame() {
-  <a href="https://skip.nightly.pw" target="_blank">
-  <button>Play Games (Skip)</button>
-</a>
+function openSkip() {
+  // Opens skip in a new tab (most reliable)
+  window.open("https://skip.nightly.pw", "_blank");
