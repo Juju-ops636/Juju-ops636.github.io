@@ -2,7 +2,7 @@
 !DOCTYPE html>
 <html>
 <head>
-  <title>Big ballsack jacob</title>
+  <title>Jfox gamehub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
@@ -52,7 +52,7 @@
 
 <body>
 
-<h1> Big ballsack jacob</h1>
+<h1> Jfox gamehub</h1>
 
 <div class="container">
   <button onclick="openGame()">Open Game App</button>
